@@ -1,0 +1,8 @@
+FROM ubuntu
+MAINTAINER urshemu@gmail.com
+RUN MKDIR /usr/app
+WORKDIR /usr/app
+RUN apt-get update && \
+    apt-get install -y openjdk-8-jdk
+COPY hemu/target/*.jar /usr/app
+EXPOSE 8080
